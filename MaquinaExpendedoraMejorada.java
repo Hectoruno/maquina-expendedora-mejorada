@@ -93,10 +93,18 @@ public class MaquinaExpendedoraMejorada {
      * para comprar un billete).
      */
     public int vaciarDineroDeLaMaquina(){
-        int vaciarMaquina;
-        vaciarMaquina = totalDineroAcumulado + balanceClienteActual;
-        totalDineroAcumulado = 0;
-        balanceClienteActual = 0;
-        return vaciarMaquina;
+        int devolverDinero;
+        devolverDinero = 0;
+        if(balanceClienteActual == 0) {
+            int vaciarMaquina;
+            vaciarMaquina = totalDineroAcumulado + balanceClienteActual;
+            totalDineroAcumulado = 0;
+            vaciarMaquina = devolverDinero;
+        }
+        else {
+            System.out.println("Operación iniciada");
+            devolverDinero = -1;
+        }
+        return devolverDinero;
     }
 }
